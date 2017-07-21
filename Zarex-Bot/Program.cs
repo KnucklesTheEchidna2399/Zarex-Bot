@@ -20,7 +20,6 @@ namespace Zarex_Bot
                         break;
                 }
             }
-            Console.WriteLine(token);
             new Program().MainAsync().GetAwaiter().GetResult();
         }
 
@@ -29,6 +28,8 @@ namespace Zarex_Bot
             Client.Log += Log;
             await Client.LoginAsync(TokenType.Bot, token);
             await Client.StartAsync();
+            
+            await Task.Delay(-1);
         }
 
 
